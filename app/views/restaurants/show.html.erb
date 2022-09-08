@@ -1,2 +1,16 @@
-<h2>your restaurant</h2>
-<%= @restaurant.name %>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h2>your restaurant</h2>
+      <%= @restaurant.name %>
+      <%= link_to 'add review', new_restaurant_review_path(@restaurant) %>
+      <hr>
+
+        <% @restaurant.reviews.each do |review| %>
+          <%= review.content %>
+        <% end %>
+        <hr>
+        <%= link_to "back", restaurants_path %>
+    </div>
+  </div>
+</div>
